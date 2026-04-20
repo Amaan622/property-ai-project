@@ -22,6 +22,7 @@ body {
   padding: 18px 30px;
   background: linear-gradient(135deg, #111, #333);
   color: white;
+  flex-wrap: wrap;
 }
 
 .header h1 {
@@ -32,6 +33,7 @@ body {
 .header nav {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .header nav a {
@@ -66,13 +68,15 @@ body {
   gap: 10px;
 }
 
+/* ================= MESSAGES ================= */
 .user-msg {
   align-self: flex-end;
   background: #111;
   color: #fff;
   padding: 10px 14px;
   border-radius: 16px 16px 0 16px;
-  max-width: 70%;
+  max-width: 75%;
+  word-wrap: break-word;
 }
 
 .bot-msg {
@@ -80,7 +84,8 @@ body {
   background: #f1f1f1;
   padding: 10px 14px;
   border-radius: 16px 16px 16px 0;
-  max-width: 70%;
+  max-width: 75%;
+  word-wrap: break-word;
 }
 
 /* ================= INPUT ================= */
@@ -96,6 +101,7 @@ body {
   border-radius: 12px;
   border: 1px solid #ddd;
   background: #fafafa;
+  font-size: 14px;
 }
 
 button {
@@ -105,6 +111,7 @@ button {
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -138,10 +145,6 @@ button:hover {
   background: #f0fff4;
 }
 
-.card.normal {
-  border: 1px solid #eee;
-}
-
 /* ================= TEXT ================= */
 .location {
   font-size: 18px;
@@ -156,6 +159,8 @@ button:hover {
   padding: 8px;
   border-radius: 10px;
   margin: 10px 0;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .why, .insight {
@@ -164,55 +169,80 @@ button:hover {
 }
 
 /* ================= TAGS ================= */
-.tag-good {
-  background: #dcfce7;
-  color: #15803d;
-  border: 1px solid #22c55e;
+.tag-good, .tag-consider, .tag-bad, .tag-normal {
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
   display: inline-block;
   margin-top: 8px;
+}
+
+/* individual colors */
+.tag-good {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #22c55e;
 }
 
 .tag-consider {
   background: #fef9c3;
   color: #a16207;
   border: 1px solid #facc15;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 8px;
 }
 
 .tag-bad {
   background: #fee2e2;
   color: #b91c1c;
   border: 1px solid #ef4444;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 8px;
 }
 
 .tag-normal {
   background: #f3f3f3;
   color: #555;
   border: 1px solid #ddd;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 8px;
 }
 
-.header nav a,
-.logo {
-  text-decoration: none;
+/* ================= RESPONSIVE (MOBILE) ================= */
+@media (max-width: 768px) {
+
+  .chat-wrapper {
+    padding: 12px;
+  }
+
+  .chat-box {
+    height: 250px;
+  }
+
+  .input-box {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .input-box input {
+    width: 100%;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .user-msg,
+  .bot-msg {
+    max-width: 90%;
+  }
 }
