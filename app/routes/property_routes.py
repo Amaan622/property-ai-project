@@ -22,10 +22,10 @@ def recommend():
 
     # ================= GREETING HANDLING =================
     if intent_type == "greeting":
-        return jsonify({
-            "message": "👋 Hi! I am your Property AI Assistant 🏡\n\nTry asking:\n• 2 BHK in Whitefield under 1 crore\n• Luxury apartment in Sarjapur\n• Budget flat in Electronic City",
-            "results": []
-        }), 200
+       return jsonify({
+        "message": "👋 Hi! I am your Property AI Assistant 🏡",
+        "results": []
+    }), 200
 
     
 

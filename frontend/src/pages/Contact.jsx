@@ -1,25 +1,48 @@
+import { FaPhone, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+
 function Contact() {
   return (
-    <div className="page">
+    <div className="page contact-page">
 
       <h2>📞 Contact Us</h2>
 
-      <p><b>Phone:</b> +91 70704 43800</p>
-      <p><b>Email:</b> amaanmd622@gmail.com</p>
+      <div className="contact-card">
 
-      <p>
-        <b>GitHub:</b>{" "}
-        <a href="https://github.com/" target="_blank">
-          https://github.com/Amaan622
-        </a>
-      </p>
+        <p>
+          <FaPhone className="icon" />
+          <b> Phone:</b> +91 70704 43800
+        </p>
 
-      <p>
-        <b>LinkedIn:</b>{" "}
-        <a href="https://linkedin.com/" target="_blank">
-          https://www.linkedin.com/in/mdamaanrahman/
-        </a>
-      </p>
+        <p>
+          <FaEnvelope className="icon" />
+          <b> Email:</b> amaanmd622@gmail.com
+        </p>
+
+        <p>
+          <FaGithub className="icon" />
+          <b> GitHub:</b>{" "}
+          <a
+            href="https://github.com/Amaan622"
+            target="_blank"
+            rel="noreferrer"
+          >
+            github.com/Amaan622
+          </a>
+        </p>
+
+        <p>
+          <FaLinkedin className="icon" />
+          <b> LinkedIn:</b>{" "}
+          <a
+            href="https://www.linkedin.com/in/mdamaanrahman/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/mdamaanrahman
+          </a>
+        </p>
+
+      </div>
 
     </div>
   );

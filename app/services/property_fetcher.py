@@ -5,7 +5,7 @@ from difflib import SequenceMatcher, get_close_matches
 
 import pandas as pd
 
-# ================= LOAD DATA =================
+
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 CSV_PATH = os.path.join(BASE_DIR, "data", "housing.csv")
 
@@ -13,7 +13,7 @@ df = pd.read_csv(CSV_PATH)
 df.columns = df.columns.str.strip().str.lower()
 
 
-# ================= SAFE FLOAT =================
+
 def safe_float(value):
     try:
         if value is None:
@@ -140,7 +140,7 @@ def add_candidate_metrics(filtered_df):
     return candidates
 
 
-# ================= SCORING ENGINE =================
+
 def score_property(row, location, bhk, max_price, intent):
     score = 0.0
     explanation = []
@@ -219,7 +219,7 @@ def score_property(row, location, bhk, max_price, intent):
     return round(score, 2), explanation
 
 
-# ================= MAIN FUNCTION =================
+
 def filter_properties(location=None, bhk=None, max_price=None, intent=None):
     if location:
         location = get_closest_location(location)

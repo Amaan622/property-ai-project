@@ -20,6 +20,9 @@ a {
   flex-direction: column;
   min-height: 100vh;
 }
+.chat-wrapper {
+  flex: 1;
+}
 
 /* ================= HEADER ================= */
 .header {
@@ -106,31 +109,38 @@ a {
 /* ================= INPUT ================= */
 .input-box {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  margin: 15px 0;
+  margin: 20px auto;
+  max-width: 700px;
 }
 
 .input-box input {
   flex: 1;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 14px 16px;
+  border-radius: 30px;
   border: 1px solid #ddd;
-  background: #fafafa;
-  font-size: 14px;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+  text-align: center;   /* 👈 makes text centered */
 }
 
 button {
-  padding: 12px 16px;
+  padding: 12px 18px;
   background: #111;
   color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 30px;
   cursor: pointer;
   white-space: nowrap;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #333;
+  transform: scale(1.03);
 }
 
 /* ================= RESULTS ================= */
@@ -262,17 +272,18 @@ button:hover {
 }
 
 .footer {
-  margin-top: 40px;
   background: #111;
   color: white;
-  padding: 20px;
+  padding: 14px 10px;   /* 👈 reduced height */
   text-align: center;
+  margin-top: auto;     /* 👈 THIS FIXES POSITIONING */
+  font-size: 13px;
 }
 
 .footer-content p {
-  margin: 5px 0;
-  font-size: 14px;
-  opacity: 0.9;
+  margin: 3px 0;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
 .footer-links a {
@@ -285,6 +296,10 @@ button:hover {
   text-decoration: underline;
 }
 
+.page {
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+}
 .copyright {
   margin-top: 10px;
   font-size: 12px;
