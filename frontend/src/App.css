@@ -1,3 +1,4 @@
+
 /* ================= BASE ================= */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
@@ -5,6 +6,12 @@ body {
   margin: 0;
   padding: 0;
   color: #1f1f1f;
+}
+
+/* REMOVE ALL LINK UNDERLINES */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ================= LAYOUT ================= */
@@ -30,6 +37,14 @@ body {
   font-size: 22px;
 }
 
+/* logo fix */
+.logo {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+/* nav */
 .header nav {
   display: flex;
   gap: 18px;
@@ -178,7 +193,6 @@ button:hover {
   margin-top: 8px;
 }
 
-/* individual colors */
 .tag-good {
   background: #dcfce7;
   color: #15803d;
@@ -203,7 +217,7 @@ button:hover {
   border: 1px solid #ddd;
 }
 
-/* ================= RESPONSIVE (MOBILE) ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
 
   .chat-wrapper {
