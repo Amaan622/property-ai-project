@@ -95,7 +95,7 @@ function App() {
                   <input
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Try: 2 BHK in Whitefield under 1 crore"
+                    placeholder="Try: Budget 3 BHK in Sarhapur"
                     onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                   />
 
