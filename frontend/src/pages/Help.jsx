@@ -6,7 +6,7 @@ function Help() {
 
       <ul>
        
-        <li>Luxury apartment in Bangalore</li>
+        <li>Electronic City</li>
         <li>Budget 3 BHK in Sarjapur</li>
         <li>Investment property in IT corridor</li>
         <li>Flats near metro stations</li>
