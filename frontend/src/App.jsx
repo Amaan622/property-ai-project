@@ -11,6 +11,9 @@ function App() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // 🔥 Use environment variable (recommended)
+ const API_URL = "https://property-ai-project.onrender.com";
+
   const handleSearch = async () => {
     if (!query.trim()) return;
 
@@ -21,7 +24,7 @@ function App() {
     setQuery("");
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/property/recommend", {
+      const res = await fetch(`${API_URL}/property/recommend`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: currentQuery })
@@ -51,7 +54,6 @@ function App() {
     setLoading(false);
   };
 
-
   const getTagClass = (tag) => {
     if (!tag) return "tag-normal";
 
@@ -72,6 +74,7 @@ function App() {
 
         <Routes>
 
+          {/* HOME PAGE */}
           <Route
             path="/"
             element={
@@ -106,7 +109,10 @@ function App() {
                 {/* RESULTS */}
                 <div className="results-grid">
                   {results.map((item, index) => (
-                    <div key={index} className={`card ${item.score >= 80 ? "good" : "normal"}`}>
+                    <div
+                      key={index}
+                      className={`card ${item.score >= 80 ? "good" : "normal"}`}
+                    >
 
                       <h3 className="location">{item.location}</h3>
 
@@ -116,13 +122,21 @@ function App() {
                         <span>⭐ {item.score}</span>
                       </div>
 
-                      {/* TAG */}
                       <span className={getTagClass(item.tag)}>
                         {item.tag}
                       </span>
 
-                      <p className="why"><b>Why:</b> {item.explanation}</p>
-                      <p className="insight"><b>Insight:</b> {item.market_insight}</p>
+                      {/* FIX: explanation is array → convert to string */}
+                      <p className="why">
+                        <b>Why:</b> {Array.isArray(item.explanation)
+                          ? item.explanation.join(", ")
+                          : item.explanation}
+                      </p>
+
+                      <p className="insight">
+                        <b>Insight:</b> {item.market_insight}
+                      </p>
+
                     </div>
                   ))}
                 </div>
