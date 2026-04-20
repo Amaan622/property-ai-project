@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import Header from "./components/Header";
+import Header from "./component/Header";
 import Help from "./pages/Help";
 import Contact from "./pages/Contact";
 
@@ -11,8 +11,7 @@ function App() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // 🔥 Use environment variable (recommended)
- const API_URL = "https://property-ai-project.onrender.com";
+  const API_URL = "https://property-ai-project.onrender.com";
 
   const handleSearch = async () => {
     if (!query.trim()) return;
@@ -32,8 +31,7 @@ function App() {
 
       const data = await res.json();
 
-      const properties = data.results || [];
-      setResults(properties);
+      setResults(data.results || []);
 
       setChat((prev) => [
         ...prev,
@@ -74,7 +72,7 @@ function App() {
 
         <Routes>
 
-          {/* HOME PAGE */}
+          {/* HOME */}
           <Route
             path="/"
             element={
@@ -113,7 +111,6 @@ function App() {
                       key={index}
                       className={`card ${item.score >= 80 ? "good" : "normal"}`}
                     >
-
                       <h3 className="location">{item.location}</h3>
 
                       <div className="meta">
@@ -126,9 +123,9 @@ function App() {
                         {item.tag}
                       </span>
 
-                      {/* FIX: explanation is array → convert to string */}
                       <p className="why">
-                        <b>Why:</b> {Array.isArray(item.explanation)
+                        <b>Why:</b>{" "}
+                        {Array.isArray(item.explanation)
                           ? item.explanation.join(", ")
                           : item.explanation}
                       </p>
@@ -136,7 +133,6 @@ function App() {
                       <p className="insight">
                         <b>Insight:</b> {item.market_insight}
                       </p>
-
                     </div>
                   ))}
                 </div>
@@ -149,6 +145,41 @@ function App() {
           <Route path="/contact" element={<Contact />} />
 
         </Routes>
+
+        {/* FOOTER */}
+        <footer className="footer">
+          <div className="footer-content">
+
+            <p>🏡 Property AI - Smart Recommendation System</p>
+
+            <p>
+              Built with React ⚛️ + Flask 🐍 | Deployed on Vercel & Render ☁️
+            </p>
+
+            <p className="footer-links">
+              <a
+                href="https://property-ai-project.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live App
+              </a>
+              {" | "}
+              <a
+                href="https://github.com/Amaan622/property-ai-project"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            </p>
+
+            <p className="copyright">
+              © {new Date().getFullYear()} Amaan. All rights reserved.
+            </p>
+
+          </div>
+        </footer>
 
       </div>
     </Router>

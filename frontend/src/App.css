@@ -260,3 +260,33 @@ button:hover {
     max-width: 90%;
   }
 }
+
+.footer {
+  margin-top: 40px;
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-links a {
+  color: #22c55e;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
