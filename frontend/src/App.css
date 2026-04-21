@@ -1,5 +1,8 @@
 
-/* ================= BASE ================= */
+
+
+
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
   background: #f4f6fb;
@@ -8,13 +11,13 @@ body {
   color: #1f1f1f;
 }
 
-/* REMOVE ALL LINK UNDERLINES */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ================= LAYOUT ================= */
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -24,7 +27,7 @@ a {
   flex: 1;
 }
 
-/* ================= HEADER ================= */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -40,14 +43,14 @@ a {
   font-size: 22px;
 }
 
-/* logo fix */
+
 .logo {
   text-decoration: none;
   color: white;
   font-weight: 700;
 }
 
-/* nav */
+
 .header nav {
   display: flex;
   gap: 18px;
@@ -66,7 +69,7 @@ a {
   color: #22c55e;
 }
 
-/* ================= CHAT ================= */
+
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
@@ -86,7 +89,7 @@ a {
   gap: 10px;
 }
 
-/* ================= MESSAGES ================= */
+
 .user-msg {
   align-self: flex-end;
   background: #111;
@@ -106,7 +109,7 @@ a {
   word-wrap: break-word;
 }
 
-/* ================= INPUT ================= */
+
 .input-box {
   display: flex;
   justify-content: center;
@@ -124,7 +127,10 @@ a {
   background: #fff;
   font-size: 15px;
   outline: none;
-  text-align: center;   /* 👈 makes text centered */
+  text-align: center;   
+  
+
+
 }
 
 button {
@@ -143,7 +149,7 @@ button:hover {
   transform: scale(1.03);
 }
 
-/* ================= RESULTS ================= */
+
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -151,7 +157,7 @@ button:hover {
   margin-top: 20px;
 }
 
-/* ================= CARD ================= */
+
 .card {
   background: #fff;
   padding: 18px;
@@ -170,7 +176,7 @@ button:hover {
   background: #f0fff4;
 }
 
-/* ================= TEXT ================= */
+
 .location {
   font-size: 18px;
   font-weight: 700;
@@ -193,7 +199,7 @@ button:hover {
   margin-top: 6px;
 }
 
-/* ================= TAGS ================= */
+
 .tag-good, .tag-consider, .tag-bad, .tag-normal {
   padding: 6px 12px;
   border-radius: 999px;
@@ -227,7 +233,7 @@ button:hover {
   border: 1px solid #ddd;
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
 
   .chat-wrapper {
@@ -274,9 +280,9 @@ button:hover {
 .footer {
   background: #111;
   color: white;
-  padding: 14px 10px;   /* 👈 reduced height */
+  padding: 14px 10px;   
   text-align: center;
-  margin-top: auto;     /* 👈 THIS FIXES POSITIONING */
+  margin-top: auto;     
   font-size: 13px;
 }
 
