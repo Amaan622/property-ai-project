@@ -20,7 +20,11 @@ def recommend():
   
     intent_type = is_property_query(query)
 
-    # ================= GREETING HANDLING =================
+    
+
+
+
+    
     if intent_type == "greeting":
        return jsonify({
         "message": "👋 Hi! I am your Property AI Assistant 🏡",
@@ -42,7 +46,7 @@ def recommend():
         max_price = float(budget) if budget else None
         intent = {}
 
-    # ================= FILTER PROPERTIES =================
+    
     results = filter_properties(
         location=location,
         bhk=int(bhk) if bhk else None,
@@ -50,14 +54,14 @@ def recommend():
         intent=intent
     )
 
-    # ================= NO RESULTS =================
+    
     if not results:
         return jsonify({
             "message": "❌ No matching properties found. Try different filters.",
             "results": []
         }), 200
 
-    # ================= BEST MATCH =================
+    
     best = results[0]
 
     message = (
