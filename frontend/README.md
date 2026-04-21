@@ -72,26 +72,11 @@ Name: Amaan
 Project: AI Property Recommendation System
 Purpose: Internship / Portfolio Project
 
-📌 Status
+ Status
 
-✔ Fully Deployed
-✔ Backend Live
-✔ Frontend Live
-✔ Production Ready
-
-
----
-
-# ⚠️ What I fixed for you
-
-✔ Fixed broken code block  
-✔ Fixed JSON formatting  
-✔ Fixed section structure  
-✔ Made GitHub rendering clean  
-✔ Removed commit text from README (it doesn’t belong there)
-
----
-
-# 🚀 Now do this
+Fully Deployed
+Backend Live
+Frontend Live
+Production Read
 
 
