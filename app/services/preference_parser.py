@@ -30,12 +30,12 @@ def normalize_text(value):
 def extract_location(text, doc):
     normalized_text = normalize_text(text)
 
-    # 1. direct known-location match
+   #  known-location match
     for location in KNOWN_LOCATIONS:
         if normalize_text(location) in normalized_text:
             return location
 
-    # 2. "in <location>" pattern
+    
     in_match = re.search(r"(?:in|at|near)\s+([a-z\s]+)", normalized_text)
     if in_match:
         candidate = in_match.group(1).strip()
@@ -44,7 +44,7 @@ def extract_location(text, doc):
             return match[0]
         return candidate
 
-    # 3. NER fallback
+    # fallback 
     for ent in doc.ents:
         if ent.label_ in ["GPE", "LOC"]:
             candidate = normalize_text(ent.text)
@@ -53,7 +53,7 @@ def extract_location(text, doc):
                 return match[0]
             return candidate
 
-    # 4. whole query fuzzy fallback
+    #fuzzy fallback
     match = get_close_matches(normalized_text, KNOWN_LOCATIONS, n=1, cutoff=0.6)
     if match:
         return match[0]
